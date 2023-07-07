@@ -1,0 +1,42 @@
+kubectl cluster-info
+kubectl get nodes
+kubcetl get pods
+kubcetl get pods -o wide
+kubectl describe pod <podname>
+kubectl delete pod <podname>
+kubectl edit pod <podname>
+kubectl create -f <definition.yml>
+kubectl run nginx --image=nginx
+kubectl run nginx --image=nginx --dry-run=client -o > <def.yaml>
+kubectl apply -f <definition.yml>
+
+kubectl get replicationcontroller
+kubectl delete replicationcontroller <name>
+
+kubectl get replicaset
+kubectl describe replicaset <replicaset-name>
+kubectl replace -f <rs-definition.yaml>
+kubcetl edit replicaset <replicaset-name>
+kubectl scale --replicas=6 -f <rs-defintion.yaml>
+kubectl scale --replicas=6 replicaset <replicaset-name>
+
+kubectl get deployments
+kubectl describe deployment <deployment-name>
+kubectl delete deployment <deployment-name>
+kubcetl explain deployment | head -n1
+kubectl create deployment <deployment-name> --image=<image-name> --replicas=<no>
+kubectl get all
+kubectl apply -f <deployment-definition.yaml>
+kubectl create -f <deployment-definition.yaml>
+kubectl create -f <deployment-definition.yaml> --record
+kubectl edit deployment <deployment-name>
+kubectl edit deployment <deployment-name> --record
+
+
+kubcetl set image deployment <deployment-name> <container-name>=<image>
+
+kubectl rollout undo deployment/<deployment-name>
+kubectl rollout status deployment/<deployment-name>
+kubectl rollout history deployment/<deployment-name>
+
+kubectl get services
