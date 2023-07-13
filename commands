@@ -40,3 +40,7 @@ kubectl rollout status deployment/<deployment-name>
 kubectl rollout history deployment/<deployment-name>
 
 kubectl get services
+
+kubectl create deployment --help
+kubectl create deployment <deployment-name> --image=image-name --replicas=3
+kubectl create deployment mydep --image=redis --replicas=3 --dry-run=client -o yaml > abc.yaml
